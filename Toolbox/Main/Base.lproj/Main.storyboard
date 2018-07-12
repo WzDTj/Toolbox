@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wx9-NX-Q2q">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TOOLBOX-->
+        <scene sceneID="rKP-tY-fGR">
+            <objects>
+                <collectionViewController id="9n0-p7-4bl" customClass="MainViewController" customModule="Toolbox" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="E9c-yy-v8K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="pdq-Ia-zOC">
+                            <size key="itemSize" width="200" height="231"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="featureCell" id="w3d-4O-ko2" customClass="FeatureCollectionViewCell" customModule="Toolbox" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="0.0" width="200" height="231"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="231"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qN3-Xa-YVX">
+                                            <rect key="frame" x="20" y="110" width="42" height="21"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LjY-11-Odk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="184" height="50"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk1-RU-QbO">
+                                                    <rect key="frame" x="0.0" y="58" width="184" height="157"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="qN3-Xa-YVX" firstAttribute="leading" secondItem="w3d-4O-ko2" secondAttribute="leadingMargin" id="V94-Hx-cc2"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="qN3-Xa-YVX" secondAttribute="trailing" id="dga-Kb-vSF"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="qN3-Xa-YVX" secondAttribute="bottom" id="tV3-hF-gHZ"/>
+                                    <constraint firstItem="qN3-Xa-YVX" firstAttribute="top" secondItem="w3d-4O-ko2" secondAttribute="topMargin" id="zPv-pL-uwR"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="iconImageView" destination="LjY-11-Odk" id="pRo-Yg-GZi"/>
+                                    <outlet property="titleLabel" destination="rk1-RU-QbO" id="6vR-Rt-6uv"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="9n0-p7-4bl" id="cIP-E7-7kR"/>
+                            <outlet property="delegate" destination="9n0-p7-4bl" id="K4T-iw-KRa"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="TOOLBOX" id="rO6-pN-sAe"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WYa-ZG-XoW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="328.80000000000001" y="286.50674662668666"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rJ3-JY-ZqZ">
+            <objects>
+                <navigationController id="Wx9-NX-Q2q" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pjL-30-Iut">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9n0-p7-4bl" kind="relationship" relationship="rootViewController" id="Iri-Hu-vZR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nq1-bt-bxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-535" y="287"/>
+        </scene>
+    </scenes>
+</document>
